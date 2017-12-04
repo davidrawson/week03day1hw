@@ -166,9 +166,14 @@ INSERT INTO attendances (person_id, movie_id) VALUES (3, 4);
 -- SELECT name FROM people;
 
 -- 7. Alex has decided to hijack our movie evening, Remove him from the table of people.
-DELETE FROM people WHERE name = 'Alex Bazlinton';
-SELECT name FROM people;
+-- DELETE FROM people WHERE name = 'Alex Bazlinton';
+-- SELECT name FROM people;
 
 -- 8. The cinema has just heard that they will be holding an exclusive midnight showing of 'Guardians of the Galaxy 2'!! Create a new entry in the 'movies' table to reflect this.
---
+-- INSERT INTO movies (title, year, show_time) VALUES ('Guardians of the Galaxy 2', 2017, '00:00');
+--SELECT (title, show_time, id) from movies;
 -- 9. The cinema would also like to make the Guardian movies a back to back feature. Update the 'Guardians of the Galaxy' show time from 17:55 to 21:30
+UPDATE movies SET show_time = '21:30'
+WHERE show_time = '17:55' AND title = 'Guardians of the Galaxy';
+SELECT (title, show_time, id) from movies;
+------WHERE id = 11;
